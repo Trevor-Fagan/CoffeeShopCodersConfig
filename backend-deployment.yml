@@ -5,7 +5,7 @@ metadata:
   labels:
     app: coffee-shop-coders
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: coffee-shop-coders
@@ -17,6 +17,7 @@ spec:
       containers:
       - name: backend
         image: 731436112197.dkr.ecr.us-east-1.amazonaws.com/coffeeshopcoders:coffee-shop-coders-backend-latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
       imagePullSecrets:
