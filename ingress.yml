@@ -3,7 +3,13 @@ kind: Ingress
 metadata:                                                                                                                                                                                                                                                                                                                                                           
   generation: 1                                                                                                                                                                                          
   name: main-ingress                                                                                                                                                                                             
-  namespace: coffee-shop-coders                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+  namespace: coffee-shop-coders    
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://www.coffeeshopcoders.com"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "Origin, X-Requested-With, Content-Type, Accept"
+    nginx.ingress.kubernetes.io/cors-max-age: "3600"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 spec:                                                                                                                                                                                                    
   ingressClassName: nginx                                                                                                                                                                                
   rules:                                                                                                                                                                                                 
