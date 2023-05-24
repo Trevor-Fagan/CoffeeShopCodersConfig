@@ -18,18 +18,11 @@ spec:
       paths:                                                                                                                                                                                             
       - backend:                                                                                                                                                                                         
           service:                                                                                                                                                                                       
-            name: frontend-service                                                                                                                                                                       
+            name: backend-service                                                                                                                                                                       
             port:                                                                                                                                                                                        
               number: 80                                                                                                                                                                                 
         path: /                                                                                                                                                                                          
-        pathType: Prefix   
-      - backend:                                                                                                                                                                                         
-          service:                                                                                                                                                                                       
-            name: backend-service                                                                                                                                                                       
-            port:                                                                                                                                                                                        
-              number: 1000                                                                                                                                                                               
-        path: /api                                                                                                                                                                                          
-        pathType: Prefix                                                                                                                                                                                
+        pathType: Prefix                                                                                                                                                                                 
 status:                                                                                                                                                                                                  
   loadBalancer:                                                                                                                                                                                          
     ingress:                                                                                                                                                                                             

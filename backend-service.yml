@@ -7,5 +7,5 @@ spec:
     app: backend-service
   ports:
     - protocol: TCP
-      port: 1000
+      port: 80
       targetPort: 5000
