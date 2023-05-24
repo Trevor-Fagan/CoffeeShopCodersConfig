@@ -1,23 +1,30 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: main-ingress
-spec:
-  rules:
-    - host: coffeeshopcoders.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-service
-                port:
-                  number: 3000
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: backend-service
-                port:
-                  number: 5000
+apiVersion: networking.k8s.io/v1   
+kind: Ingress                                                                                                                                                                                            
+metadata:                                                                                                                                                                                                                                                                                                                                                           
+  generation: 1                                                                                                                                                                                          
+  name: main-ingress                                                                                                                                                                                             
+  namespace: coffee-shop-coders                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+spec:                                                                                                                                                                                                    
+  ingressClassName: nginx                                                                                                                                                                                
+  rules:                                                                                                                                                                                                 
+  - host: www.coffeeshopcoders.com                                                                                                                                                                       
+    http:                                                                                                                                                                                                
+      paths:                                                                                                                                                                                             
+      - backend:                                                                                                                                                                                         
+          service:                                                                                                                                                                                       
+            name: frontend-service                                                                                                                                                                       
+            port:                                                                                                                                                                                        
+              number: 80                                                                                                                                                                                 
+        path: /                                                                                                                                                                                          
+        pathType: Prefix   
+      - backend:                                                                                                                                                                                         
+          service:                                                                                                                                                                                       
+            name: backend-service                                                                                                                                                                       
+            port:                                                                                                                                                                                        
+              number: 1000                                                                                                                                                                               
+        path: /api                                                                                                                                                                                          
+        pathType: Prefix                                                                                                                                                                                
+status:                                                                                                                                                                                                  
+  loadBalancer:                                                                                                                                                                                          
+    ingress:                                                                                                                                                                                             
+    - ip: 146.190.1.77

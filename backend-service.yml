@@ -4,8 +4,8 @@ metadata:
   name: backend-service
 spec:
   selector:
-    app: coffee-shop-coders
+    app: backend-service
   ports:
     - protocol: TCP
-      port: 5000
+      port: 1000
       targetPort: 5000
