@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 731436112197.dkr.ecr.us-east-1.amazonaws.com/coffeeshopcoders:coffee-shop-coders-backend-latest
+        image: 731436112197.dkr.ecr.us-east-1.amazonaws.com/coffeeshopcoders:coffee-shop-coders-latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
